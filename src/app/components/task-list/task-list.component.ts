@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../../services/task.service';
 import { Tarea } from '../../models/tarea.model';
 
 @Component({
@@ -6,18 +7,24 @@ import { Tarea } from '../../models/tarea.model';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
   tareas: Tarea[] = [];
 
-  onTareaAgregada(tarea: Tarea) {
-    this.tareas.push(tarea);
+  constructor(private taskService: TaskService) {}
+
+  ngOnInit() {
+    this.tareas = this.taskService.getTareas();
+  }
+
+  onTareaAgregada(descripcion: string) {
+    this.taskService.agregarTarea(descripcion);
   }
 
   toggleCompletado(index: number) {
-    this.tareas[index].completado = !this.tareas[index].completado;
+    this.taskService.toggleCompletado(index);
   }
 
   eliminarTarea(index: number) {
-    this.tareas.splice(index, 1);
+    this.taskService.eliminarTarea(index);
   }
 }
