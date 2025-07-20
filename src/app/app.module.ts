@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { TareasComponent } from './tareas/tareas.component';
@@ -14,11 +21,17 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
     TareasComponent,
     TaskFormComponent,
     TaskListComponent,
-    TaskItemComponent
+    TaskItemComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

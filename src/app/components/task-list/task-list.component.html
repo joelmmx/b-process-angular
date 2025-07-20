@@ -1,8 +1,16 @@
-<app-task-form (tareaAgregada)="onTareaAgregada($event)"></app-task-form>
+<mat-card>
+  <mat-card-title>Lista de Tareas</mat-card-title>
+  <mat-card-content>
+    <app-task-form (tareaAgregada)="onTareaAgregada($event)"></app-task-form>
 
-<app-task-item
-  *ngFor="let tarea of tareas; let i = index"
-  [tarea]="tarea"
-  (completadoCambiado)="toggleCompletado(i)"
-  (eliminar)="eliminarTarea(i)">
-</app-task-item>
+    <div style="margin-top: 1rem;">
+      <app-task-item
+        *ngFor="let tarea of tareas; let i = index"
+        [tarea]="tarea"
+        [index]="i"
+        (completadoCambiado)="toggleCompletado($event)"
+        (eliminar)="eliminarTarea($event)">
+      </app-task-item>
+    </div>
+  </mat-card-content>
+</mat-card>
