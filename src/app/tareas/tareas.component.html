@@ -14,8 +14,15 @@
 
   <ul style="list-style-type: none; padding: 0;">
     <li *ngFor="let tarea of tareas; let i = index" style="margin-bottom: 0.5rem;">
-      {{ tarea }}
-      <button (click)="eliminarTarea(i)" style="margin-left: 0.5rem;">Eliminar</button>
+        <input
+            type="checkbox"
+            [(ngModel)]="tarea.completado"
+            (change)="toggleTareaCompletada(i)"
+        />
+        <span [ngStyle]="{ 'text-decoration': tarea.completado ? 'line-through' : 'none' }">
+            {{ tarea.descripcion }}
+        </span>
+        <button (click)="eliminarTarea(i)" style="margin-left: 0.5rem;">Eliminar</button>
     </li>
   </ul>
 </div>
