@@ -1,1 +1,8 @@
-<p>task-item works!</p>
+<input
+  type="checkbox"
+  [checked]="tarea.completado"
+  (change)="completadoCambiado.emit(index)" />
+
+<span [class.completed]="tarea.completado">{{ tarea.descripcion }}</span>
+
+<button (click)="eliminar.emit(index)">Eliminar</button>

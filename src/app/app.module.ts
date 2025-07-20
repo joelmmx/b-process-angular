@@ -13,9 +13,13 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
     AppComponent,
     TareasComponent,
     TaskFormComponent,
-    TaskListComponent
+    TaskListComponent,
+    TaskItemComponent
   ],
-  imports: [BrowserModule, FormsModule, TaskItemComponent],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

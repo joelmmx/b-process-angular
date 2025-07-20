@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tarea } from '../../models/tarea.model'; // Make sure the path is correct
+import { Tarea } from '../../models/tarea.model';
 
 @Component({
   selector: 'app-task-list',
@@ -15,5 +15,9 @@ export class TaskListComponent {
 
   toggleCompletado(index: number) {
     this.tareas[index].completado = !this.tareas[index].completado;
+  }
+
+  eliminarTarea(index: number) {
+    this.tareas.splice(index, 1);
   }
 }
