@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <h1>Todo App</h1>
-    <p>Welcome to your Angular To-Do List!</p>
-  `,
+  template: `<app-tareas></app-tareas>`,
   styles: []
 })
 export class AppComponent {
