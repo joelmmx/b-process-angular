@@ -1,0 +1,6 @@
+<!-- src/app/components/task-list/task-list.component.html -->
+<app-task-form (tareaAgregada)="onTareaAgregada($event)"></app-task-form>
+
+<ul>
+  <li *ngFor="let tarea of tareas">{{ tarea.descripcion }}</li>
+</ul>
