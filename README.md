@@ -60,5 +60,5 @@ Proudly built in Mexico — with Angular and coffee
 
 Example:
 
-<img width="1360" height="528" alt="image" src="https://github.com/user-attachments/assets/b6312cf7-0a9a-4783-99b3-0b0807e933ec" />
+![App Screenshot](https://github.com/joelmmx/b-process-angular/blob/main/assets/screenshot.jpeg?raw=true)
 
