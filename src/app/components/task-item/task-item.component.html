@@ -1,9 +1,11 @@
-<div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem;">
-  <mat-checkbox [checked]="tarea.completado" (change)="completadoCambiado.emit(index)">
-    {{ tarea.descripcion }}
-  </mat-checkbox>
-
-  <button mat-raised-button color="warn" (click)="eliminar.emit(index)">
-    Eliminar
-  </button>
-</div>
+<mat-card class="task-card">
+  <mat-card-content>
+    <mat-checkbox 
+      [checked]="tarea.completado" 
+      (click)="toggleCompletado()"
+    >
+      {{ tarea.descripcion }}
+    </mat-checkbox>
+    <button mat-raised-button color="warn" (click)="eliminarTarea()">Eliminar</button>
+  </mat-card-content>
+</mat-card>
