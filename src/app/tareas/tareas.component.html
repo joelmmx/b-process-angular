@@ -1,11 +1,21 @@
-<h2>{{ titulo }}</h2>
+<div class="tareas-container">
+  <h2>{{ titulo }}</h2>
+  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+    <label for="tareaInput">Nueva tarea</label>
+    <input
+      id="tareaInput"
+      type="text"
+      [(ngModel)]="nuevaTarea"
+      (keyup.enter)="agregarTarea()"
+      placeholder="Escribe una tarea"
+    />
+    <button (click)="agregarTarea()">Agregar</button>
+  </div>
 
-<input type="text" [(ngModel)]="nuevaTarea" placeholder="Escribe una tarea" />
-<button (click)="agregarTarea()">Agregar</button>
-
-<ul>
-  <li *ngFor="let tarea of tareas; let i = index">
-    {{ tarea }}
-    <button (click)="eliminarTarea(i)">Eliminar</button>
-  </li>
-</ul>
+  <ul style="list-style-type: none; padding: 0;">
+    <li *ngFor="let tarea of tareas; let i = index" style="margin-bottom: 0.5rem;">
+      {{ tarea }}
+      <button (click)="eliminarTarea(i)" style="margin-left: 0.5rem;">Eliminar</button>
+    </li>
+  </ul>
+</div>
